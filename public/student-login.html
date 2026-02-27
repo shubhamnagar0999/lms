@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4e73df, #1cc88a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-card {
+      background: #fff;
+      padding: 30px;
+      width: 320px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .login-card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-card input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 10px;
+      background: #4e73df;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .login-card button:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h2>Student Login</h2>
+
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit" id="loginBtn">Login</button>
+      <p class="error" id="error"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const errorText = document.getElementById("error");
+    const loginBtn = document.getElementById("loginBtn");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      errorText.innerText = "";
+      loginBtn.disabled = true;
+      loginBtn.innerText = "Logging in...";
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      try {
+        const res = await fetch("http://localhost:5000/api/admin/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorText.innerText = data.message || "Login failed";
+          return;
+        }
+
+        localStorage.setItem("token", data.data.token);
+        window.location.href = "student-player.html";
+
+      } catch (err) {
+        errorText.innerText = "Server not reachable";
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.innerText = "Login";
+      }
+    });
+  </script>
+
+</body>
+</html>

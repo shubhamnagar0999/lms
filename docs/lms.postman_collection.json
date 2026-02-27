@@ -1,0 +1,659 @@
+{
+  "info": {
+    "_postman_id": "4ff3ae3f-4929-4c48-b305-f5feb626d686",
+    "name": "lms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30181440",
+    "_collection_link": "https://go.postman.co/collection/30181440-4ff3ae3f-4929-4c48-b305-f5feb626d686?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "studend",
+          "item": [
+            {
+              "name": "createStudent",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjEwODAxNiwiZXhwIjoxNzcyMTk0NDE2fQ.wN1UZNH4VKhhkKhSa_5AZr_qzEdBSdAvdPOz1JuTqSU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Shubham\",\r\n  \"email\": \"shubham@gmail.com\",\r\n  \"password\": \"shubham\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/students",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "students"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getStudents",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjIwNDI3OSwiZXhwIjoxNzcyMjkwNjc5fQ.04vh5W5V0iMSPem-WxwJj7oHEer5AxXtMbPM8PAti_E",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/students?page=1&limit=2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "students"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "courses",
+          "item": [
+            {
+              "name": "createCourse",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjExMDAyOSwiZXhwIjoxNzcyMTk2NDI5fQ.27EIVcHIE_9a4vcav9ceHe3Q8mfLgfUV8xy6M3M-TEQ",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"SQL\",\r\n  \"description\": \"Learn SQL Advanced\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/courses",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "courses"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getCourses",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzcyMTk5ODMyLCJleHAiOjE3NzIyODYyMzJ9.qmqFXCPtMug0uHhdMO1YXb73EU5_H_gM57Wvs9o3gtU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/courses",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "courses"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateCourse",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjExMDAyOSwiZXhwIjoxNzcyMTk2NDI5fQ.27EIVcHIE_9a4vcav9ceHe3Q8mfLgfUV8xy6M3M-TEQ",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Node.js Basics-1\",\r\n  \"description\": \"Learn fundamentals of Node.js-2\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/courses/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "courses",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteCourse",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjExMDAyOSwiZXhwIjoxNzcyMTk2NDI5fQ.27EIVcHIE_9a4vcav9ceHe3Q8mfLgfUV8xy6M3M-TEQ",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/courses/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "courses",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "lesson",
+          "item": [
+            {
+              "name": "createLesson",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjIwNDI3OSwiZXhwIjoxNzcyMjkwNjc5fQ.04vh5W5V0iMSPem-WxwJj7oHEer5AxXtMbPM8PAti_E",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Introduction to SQL\",\r\n  \"description\": \"Overview of SQL\",\r\n  \"videoUrl\": \"https://media.w3.org/2010/05/video/movie_300.mp4\",\r\n  \"duration\": 600,\r\n  \"courseId\": 36\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/lessons",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "lessons"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteLesson",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjExMDAyOSwiZXhwIjoxNzcyMTk2NDI5fQ.27EIVcHIE_9a4vcav9ceHe3Q8mfLgfUV8xy6M3M-TEQ",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Node.js Basics\",\r\n  \"description\": \"Learn fundamentals of Node.js\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/lessons/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "lessons",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateLesson",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjIwNDI3OSwiZXhwIjoxNzcyMjkwNjc5fQ.04vh5W5V0iMSPem-WxwJj7oHEer5AxXtMbPM8PAti_E",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Introduction to SQL\",\r\n  \"description\": \"Overview of SQL\",\r\n  \"videoUrl\": \"https://media.w3.org/2010/05/video/movie_300.mp4\",\r\n  \"duration\": 300,\r\n  \"courseId\": 36\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/admin/lessons/38",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "lessons",
+                    "38"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "enrollments",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MjExMDAyOSwiZXhwIjoxNzcyMTk2NDI5fQ.27EIVcHIE_9a4vcav9ceHe3Q8mfLgfUV8xy6M3M-TEQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": 2,\r\n  \"courseIds\": [4]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/enrollments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "student",
+      "item": [
+        {
+          "name": "getCourses",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzcyMTk5ODMyLCJleHAiOjE3NzIyODYyMzJ9.qmqFXCPtMug0uHhdMO1YXb73EU5_H_gM57Wvs9o3gtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/student/courses",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "student",
+                "courses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getProgress",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzcyMjA0Mzk0LCJleHAiOjE3NzIyOTA3OTR9.CuYRnn_8cG2yNuNIbtzZzRgxm997DH4pHXguYbcqvlM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/student/progress/38",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "student",
+                "progress",
+                "38"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getCourseProgress",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzcyMjA0Mzk0LCJleHAiOjE3NzIyOTA3OTR9.CuYRnn_8cG2yNuNIbtzZzRgxm997DH4pHXguYbcqvlM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/student/progress/courses/36",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "student",
+                "progress",
+                "courses",
+                "36"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "videoProgress",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzcyMTc0NDgyLCJleHAiOjE3NzIyNjA4ODJ9.UIZ0B0hrK7-E4KRB5f9bWYoCY4AZLKMR8AbgAI8A2gM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"lessonId\": 4,\r\n  \"watchedTime\": 580\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/student/progress",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "student",
+                "progress"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"student@test.com\",\r\n  \"password\": \"student123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
